@@ -4,23 +4,247 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>빠이빠이코로나🌏</title>
+    <title>빠이빠이 코로나🦍</title>
     <style>
-        #chartDisplay{
-            width: 800px;
-            height: 500px;
-            border: 1px solid black;
+        body{
+            margin: 0;
+            overflow: auto;
+        }
+        body::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        body::-webkit-scrollbar-thumb{
+            background-color: #2f3542;
+            border-radius: 6px;
+            background-clip: padding-box;
+            border: 1px solid transparent;
+        }
+        body::-webkit-scrollbar-track{
+            background-color: #b9b9b9;
+            border-radius: 6px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        hr{
+            margin: 0;
+            border: none;
+            height: 1px;
+            background-color: lightgray;
+        }
+        #header{
+            display: flex;
+            width: 100%;
+            height: 70px;
+            color: white;
+            box-sizing: border-box;
+            padding: 8px;
+            justify-content: space-between;
+            position: fixed;
+            z-index: 10;
+            transition: all 0.2s;
+
+            user-select: none;
+        }
+        .top{
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+        .title{
+            display: block;
+            font-size: 30px;
+            font-weight: bolder;
+            margin-left: 20px;
+            transition: all 0.2s;
+        }
+        .topUl{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            margin-right: 50px;
+        }
+        ul.topUl li{
+            font-size: 20px;
+            font-weight: bold;
+            list-style: none;
+            box-sizing: border-box;
+            margin: 20px;
+
+            cursor: pointer;
+        }
+        ul.topUl li:hover{
+            filter: brightness(80%) drop-shadow(0px 0px 10px black);
+        }
+        #sideMenuBtn{
+            margin-left: 15px;
+            width: 25px;
+            height: 30px;
+
+            cursor: pointer;
+        }
+        #sideMenuBtn:hover{
+            filter: brightness(80%);
+        }
+        #sideMenu{
+            position: fixed;
+            background-color: white;
+            width: 200px;
+            height: calc(100vh - 70px);
+            left: 0;
+            top: 70px;
+            transition: all 0.2s;
+            transform: translateX(-100%);
+            filter: opacity(0%);
+            z-index: 10;
+            /* padding-top: 70px; */
+        }
+        div#sideMenu ul{
+            padding: 0;
+        }
+        div#sideMenu ul li{
+            list-style: none;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: 15px 0;
+            margin-left: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+        div#sideMenu ul li:hover{
+            color: indigo;
+        }
+        .screen{
+            position: relative;
+            height: calc(100vh - 70px);
+            top: 0px;
+            left: 0px;
+        }
+        .intro{
+            width: 100%;
+            height: 800px;
+            background-image: url(/img/background.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .introOp{
+            position: absolute;
+            background-color: #000;
+            width: 100%;
+            height: 800px;
+            filter: opacity(50%);
+        }
+        .introText{
+            position: absolute;
+            width: 100%;
+            color: white;
+            font-weight: bolder;
+            padding: 200px 12%;
+            box-sizing: border-box;
+        }
+        .introText > div{
+            transform: translateX(-100%);
+            transition: all 0.5s; 
+            font-size: 80px;
+        }
+        .introText > span{
+            display: block;
+            transform: translateX(-100%);
+            transition: all 0.8s;
+            font-size: 50px;
+        }
+        .part1{
+            width: 100%;
+            height: 100%;
+        }
+        .test1_link{
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div id="chartDisplay">
-        공유 테스트 입니다.
-        v1 asldf;alskdjf;alksjdf;
+    <div id="header">
+        <div class="top">
+            <img id="sideMenuBtn" src="/img/menu.png">
+            <a href="./index.html" class="title">CodingUs</a>
+        </div>
+        <div class="top">
+            <ul class="topUl">
+                <li>Site</li>
+                <li>Idea</li>
+            </ul>
+        </div>
     </div>
-    <div id="chart_btn_tap">
-        <div>펜데믹 주기</div>
-        <div>코로나 확진자</div>
+    <div id="sideMenu">
+        <ul>
+            <li><a href="./index1.html" class="test1_link">test1</a></li><hr>
+            <li>part2</li><hr>
+            <li>part3</li><hr>
+            <li>part4</li><hr>
+            <li>part5</li><hr>
+            <li>part6</li><hr>
+            <li>part7</li><hr>
+            <li>part8</li><hr>
+        </ul>
     </div>
+    <div class="screen">
+        <div class="intro">
+            <div class="introOp"></div>
+            <div class="introText">
+                <div class="text1">Text</div>
+                <span class="text2">Text</span>
+            </div>
+        </div>
+        <div style="background-color: lightblue; width: 100%; height: 1000px; font-size: 50px; font-weight: bolder;">공유 테스트</div>
+        <a href="http://naver.com" style="color: black;">test</a>
+    </div>
+    <script>
+        const sideMenuBtn = document.querySelector('#sideMenuBtn');
+        const sideMenu = document.querySelector('#sideMenu');
+        const header = document.querySelector('#header');
+        const headerHeight = header.getBoundingClientRect().height;
+        const title = document.querySelector('.title');
+        const introText = document.querySelector('.introText');
+        const text1 = document.querySelector('.text1');
+        const text2 = document.querySelector('.text2');
+        
+        let sideMenuCheck = false;
+        
+        text1.style.transform = 'translate(0%)';
+        text2.style.transform = 'translate(0%)';
+
+        window.addEventListener("scroll", () => {
+            if(sideMenuCheck == false){
+                if (window.scrollY > headerHeight) {
+                    header.setAttribute("style", "background: white; color: black;");
+                    title.style.color = 'black';
+                } else {
+                    header.setAttribute("style", "background: transparent; color: white;");
+                    title.style.color = 'white';
+                }
+            }
+        });
+
+        sideMenuBtn.onclick = () =>{
+            if(sideMenuCheck == false){
+                sideMenuCheck = true;
+                sideMenu.style.transform = 'translate(0%)';
+                sideMenu.style.filter = 'opacity(100%)';
+                header.setAttribute("style", "background: white; color: black;");
+                title.style.color = 'black';
+            }else{
+                sideMenuCheck = false;
+                sideMenu.style.transform = 'translate(-100%)';
+                sideMenu.style.filter = 'opacity(0%)';
+                if(window.scrollY < headerHeight){
+                    header.setAttribute("style", "background: transparent; color: white;");
+                    title.style.color = 'white';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
