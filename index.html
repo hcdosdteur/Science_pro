@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>빠이빠이 코로나🦍</title>
+    <title>빠이빠이 코로나🦍❤</title>
     <style>
         body{
             margin: 0;
@@ -114,7 +114,7 @@
             cursor: pointer;
             user-select: none;
         }
-        div#sideMenu ul li:hover{
+        div#sideMenu ul li a:hover{
             color: indigo;
         }
         .screen{
@@ -160,7 +160,7 @@
             width: 100%;
             height: 100%;
         }
-        .test1_link{
+        .test_link{
             color: black;
         }
     </style>
@@ -180,9 +180,9 @@
     </div>
     <div id="sideMenu">
         <ul>
-            <li><a href="./index1.html" target="_blank" class="test1_link">test1</a></li><hr>
-            <li>part2</li><hr>
-            <li>part3</li><hr>
+            <li><a href="./index1.html" target="_blank" class="test_link">test1</a></li><hr>
+            <li><a href="./index2.html" target="_blank" class="test_link">test2</a></li><hr>
+            <li><a href="./index3.html" target="_blank" class="test_link">test3</a></li><hr>
         </ul>
     </div>
     <div class="screen">
@@ -196,50 +196,6 @@
         <div style="background-color: lightblue; width: 100%; height: 1000px; font-size: 50px; font-weight: bolder;">공유 테스트</div>
         <a href="http://naver.com" style="color: black;">test</a>
     </div>
-    <script>
-        const sideMenuBtn = document.querySelector('#sideMenuBtn');
-        const sideMenu = document.querySelector('#sideMenu');
-        const header = document.querySelector('#header');
-        const headerHeight = header.getBoundingClientRect().height;
-        const title = document.querySelector('.title');
-        const introText = document.querySelector('.introText');
-        const text1 = document.querySelector('.text1');
-        const text2 = document.querySelector('.text2');
-        
-        let sideMenuCheck = false;
-        
-        text1.style.transform = 'translate(0%)';
-        text2.style.transform = 'translate(0%)';
-
-        window.addEventListener("scroll", () => {
-            if(sideMenuCheck == false){
-                if (window.scrollY > headerHeight) {
-                    header.setAttribute("style", "background: white; color: black;");
-                    title.style.color = 'black';
-                } else {
-                    header.setAttribute("style", "background: transparent; color: white;");
-                    title.style.color = 'white';
-                }
-            }
-        });
-
-        sideMenuBtn.onclick = () =>{
-            if(sideMenuCheck == false){
-                sideMenuCheck = true;
-                sideMenu.style.transform = 'translate(0%)';
-                sideMenu.style.filter = 'opacity(100%)';
-                header.setAttribute("style", "background: white; color: black;");
-                title.style.color = 'black';
-            }else{
-                sideMenuCheck = false;
-                sideMenu.style.transform = 'translate(-100%)';
-                sideMenu.style.filter = 'opacity(0%)';
-                if(window.scrollY < headerHeight){
-                    header.setAttribute("style", "background: transparent; color: white;");
-                    title.style.color = 'white';
-                }
-            }
-        }
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
