@@ -26,6 +26,8 @@
         }
         a{
             text-decoration: none;
+        }
+        .hyperlink1{
             color: white;
         }
         hr{
@@ -60,7 +62,7 @@
             margin-left: 20px;
             transition: all 0.2s;
         }
-        .topUl{
+        /* .topUl{
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -78,7 +80,7 @@
         }
         ul.topUl li:hover{
             filter: brightness(80%) drop-shadow(0px 0px 10px black);
-        }
+        } */
         #sideMenuBtn{
             margin-left: 15px;
             width: 25px;
@@ -126,7 +128,7 @@
         .intro{
             width: 100%;
             height: 800px;
-            background-image: url(/img/background.png);
+            background-image: url(/img/virus_microscope-wallpaper-1920x1080.png);
             background-position: center center;
             background-repeat: no-repeat;
         }
@@ -163,39 +165,98 @@
         .test_link{
             color: black;
         }
+        #introduce{
+            background-color: lightblue;
+            width: 100%;
+            height: 1000px;
+            font-size: 40px;
+            font-weight: bolder;
+            /* background-image: url(/img/common.png);
+            background-repeat: no-repeat;
+            background-size: 50%; */
+        }
+        .developer{
+            width: 90%;
+            margin: 20px auto;
+        }
+        .whtiegap{
+            width: 100%;
+            height: 170px;
+            background-color: white;
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .downArrow{
+            transition: all 0.2s;
+            animation: motion 0.4s infinite alternate;
+            margin-top: 0;
+            user-select: none;
+        }
+        #de_say{
+            transition: all 0.2s;
+            user-select: none;
+        }
+        @keyframes motion {
+            0% { margin-top: 0px; }
+            100% { margin-top: 10px; }
+        }
+        .de_contents{
+            font-size: 30px;
+            margin-top: 5px;
+        }   
     </style>
 </head>
 <body>
     <div id="header">
         <div class="top">
             <img id="sideMenuBtn" src="/img/menu.png">
-            <a href="./index.html" class="title">CodingUs</a>
-        </div>
-        <div class="top">
-            <ul class="topUl">
-                <li>Site</li>
-                <li>Idea</li>
-            </ul>
+            <a href="./index.html" class="title hyperlink1">Virus Prediction</a>
         </div>
     </div>
     <div id="sideMenu">
         <ul>
-            <li><a href="./index1.html" target="_blank" class="test_link">test1</a></li><hr>
-            <li><a href="./index2.html" target="_blank" class="test_link">test2</a></li><hr>
-            <li><a href="./index3.html" target="_blank" class="test_link">test3</a></li><hr>
+            <li><a href="./index1.html" target="_blank" class="test_link">코로나 검색 수</a></li><hr>
+            <li><a href="./index2.html" target="_blank" class="test_link">SIR 모델 그래프</a></li><hr>
+            <li><a href="./index3.html" target="_blank" class="test_link">예측 정확도 개선</a></li><hr>
         </ul>
     </div>
     <div class="screen">
         <div class="intro">
             <div class="introOp"></div>
             <div class="introText">
-                <div class="text1">Text</div>
-                <span class="text2">Text</span>
+                <div class="text1">바이러스 예측</div>
+                <span class="text2">By bye-Covid</span>
             </div>
         </div>
-        <div style="background-color: lightblue; width: 100%; height: 1000px; font-size: 50px; font-weight: bolder;">공유 테스트</div>
-        <a href="http://naver.com" style="color: black;">test</a>
+        <div class="whtiegap">
+            <div id="de_say">개발자의 말</div>
+            <img class="downArrow" src="./img/아래화살표.png" width="120px" height="50px">
+        </div>
+        <div id="introduce">
+            <div style="display: flex;">
+                <img src="./img/common.png" width="50%">
+                <img src="./img/tid296t000605.jpg" width="50%">
+            </div>
+            <div class="developer">
+                <div>조원 소개_<a href="http://buwon.icems.kr/main.do" style="font-size: 25px;">부원중</a>
+                    <blockquote class="de_contents">
+                        김도현 방상백 윤지홍
+                    </blockquote>
+                </div>
+                <div>개발 의도
+                    <blockquote class="de_contents">
+                        안녕하세요 저희는 많은 사람들에게 지금 이슈가 되고 있는 코로나에 대한 정보와,
+                        그 정보들을 그래프로 나타낸 시각적인 자료들을 보여주어 코로나를 예방하고,
+                        현재 상황과 미래 전망을 알려주기 위해 이 웹사이트를 제작하게 되었습니다 
+                    </blockquote>
+                </div>
+            </div>
+        </div>
     </div>
+    <a href="">egg</div>
     <script src="./index.js"></script>
 </body>
 </html>
